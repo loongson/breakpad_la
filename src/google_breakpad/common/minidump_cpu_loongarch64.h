@@ -88,6 +88,10 @@ typedef struct {
 
   uint64_t csr_epc;
 
+  unsigned int   __fcsr;
+  unsigned int   __vcsr;
+  unsigned long long   __fcc;
+
   /* The next field is included with MD_CONTEXT_LOONGARCH64_FLOATING_POINT. */
   MDFloatingSaveAreaLoongarch64 float_save;
 
