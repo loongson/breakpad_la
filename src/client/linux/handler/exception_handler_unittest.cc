@@ -774,7 +774,7 @@ TEST(ExceptionHandlerTest, InstructionPointerMemoryMaxBound) {
   // Use 4k here because the OS will hand out a single page even
   // if a smaller size is requested, and this test wants to
   // test the upper bound of the memory range.
-  const uint32_t kMemorySize = 4096;  // bytes
+  const uint32_t kMemorySize = sysconf(_SC_PAGESIZE);  // bytes
   const int kOffset = kMemorySize - sizeof(kIllegalInstruction);
 
   const pid_t child = fork();
