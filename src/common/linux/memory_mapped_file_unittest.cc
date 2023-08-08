@@ -179,11 +179,7 @@ TEST_F(MemoryMappedFileTest, RemapAfterMap) {
 TEST_F(MemoryMappedFileTest, MapWithOffset) {
   // Put more data in the test file this time. Offsets can only be
   // done on page boundaries, so we need a two page file to test this.
-#if defined(__loongarch64)
-  const int page_size = 16384;
-#else
-  const int page_size = 4096;
-#endif
+  const int page_size = sysconf(_SC_PAGESIZE);
   char data1[2 * page_size];
   size_t data1_size = sizeof(data1);
   for (size_t i = 0; i < data1_size; ++i) {
