@@ -523,7 +523,7 @@ breakpad_getcontext:
 
   /* rt_sigprocmask (SIG_BLOCK, NULL, &ucp->uc_sigmask, _NSIG8) */
   addi.d $a2, $a0, UCONTEXT_SIGMASK_OFFSET
-  li.w  $a1, zero
+  li.w  $a1, 0
   li.w  $a0, 0
   li.w  $a3, _NSIG / 8
   li.w  $a7, __NR_rt_sigprocmask
