@@ -37,6 +37,7 @@
 #include "common/module.h"
 #include "common/string_view.h"
 
+#include <algorithm>
 #include <assert.h>
 #include <errno.h>
 #include <stdio.h>
